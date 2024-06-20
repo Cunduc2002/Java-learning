@@ -1,0 +1,19 @@
+right now I'll be learning about java variables
+
+A variable is a placeholder for some letter or numbers
+example:
+x = 123 
+
+the most used in college are marked with a *:
+
+*boolean //store true or false
+*int //means to store integer
+
+float //fractorial number up to 6-7 digits like 3.141592f
+*double //fractorial up to 15 digits like 3.14592653589793
+
+//in short double means double precision and it is more precise 
+
+*String //a sequence for characters like "Hello world"
+
+
