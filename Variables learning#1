@@ -1,0 +1,35 @@
+imagine we have two cups. 
+Cup 1 has water and 
+cup 2 has Kool-Aid
+
+String x = "water";
+String y = "Kool-Aid";
+
+To swap the two variables, we can't just switch them both. That will just be like pouring 
+the kool-Aid directly into the cup1 that has water and they get all mixed up. 
+It doesn't understand that you can pour the water out to put in the another
+because it wasn't given the instruction that way or have another cup for it. 
+
+Thus, we need a temporary variable to store one in order to open up space in another.
+we create - String temp;
+
+public class Main {
+
+public static void main(String[] args {
+
+String x = "water";
+String y = "Kool-Aid";
+String temp;
+
+temp = x; //we put x inside temp
+x = y; //we put y = x while below is y inside temp
+y = temp; //y put inside temp thux, switching the position
+
+System.out.println("x: " + x);
+System.out.println("y: " + y);
+
+}
+
+the results would be 
+"x: Kool-Aid"
+"y: Water"
