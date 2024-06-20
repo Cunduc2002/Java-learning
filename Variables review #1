@@ -14,6 +14,24 @@ float //fractorial number up to 6-7 digits like 3.141592f
 
 //in short double means double precision and it is more precise 
 
+*char //only store a single letter ex. 'f'
 *String //a sequence for characters like "Hello world"
 
+public class Main {
+  public static void main(String[] args) {
 
+  int x =123;
+double y =3.14;
+boolean z = true;
+Char symbol = @;
+String name = "Bro";
+
+System.out.println("Hello " + name);
+
+}
+
+//unlike Python, the identation doesn't matter. The important is the {} and ";" 
+signifies how each code are seperated from each other. 
+
+this would results in: 
+"Hello Bro" 
