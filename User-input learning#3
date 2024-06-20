@@ -1,0 +1,145 @@
+the scanner class is needed to make input commands
+
+import java.util.Scanner;
+public class Main{
+
+public static void main(String[] args) {
+
+Scanner console = new Scanner(System.in); //System.in means inqut and is always needed for scanner
+
+// new Scanner means to create a new Scanner class
+
+//if use Scanner scanner = new Scanner(System.in);
+//then String name = scanner.nextLine();
+//same with nextInt being int age = scanner.nextInt();
+
+System.out.println("What is your name? ");
+String name = console.nextLine();
+System.out.println("How old are you? ");
+int age = console.nextInt();
+
+//the "Int" in nextInt means we are only accepting integers. 
+//if we type in letters then the program will give an error. 
+//I'll be learning about exception handling in the future. So for now, I type in numbers 
+
+System.out.println("Hello " + name);
+System.out.println("You are " + age + " years old");
+
+This would result is:
+What is your name? 
+input: Mark //This is the console.nextLine() running 
+How old are you? 
+input: 19
+
+//This is the line 25 and 26 displaying
+Hello Mark
+You are 19 years old
+
+=== Code Execution Successful ===
+-----------------------------------------------------------------------------------
+another example:
+import java.util.Scanner;
+public class Main{
+
+public static void main(String[] args) {
+
+Scanner console = new Scanner(System.in); 
+
+System.out.println("What is your name? ");
+String name = console.nextLine();
+System.out.println("How old are you? ");
+int age = console.nextInt();
+System.out.println("What is your favorite food? ");
+String food = console.nextLine();
+
+System.out.println("Hello " + name);
+System.out.println("You are " + age + " years old");
+System.out.println("You like " + food);
+}
+}
+
+results:
+What is your name? 
+Mark
+How old are you? 
+19
+What is your favorite food? 
+Hello Mark
+You are 19 years old
+You like 
+
+=== Code Execution Successful === 
+
+//why did it skipped after "What is your favorite food?" line? 
+
+The reason being that we can imagine it like this:
+//The [         ]   box is the scanner
+
+             Scanner
+nextLine() [         ]
+
+//we type Mark and type enter 
+             Scanner
+nextLine() [ Mark\n  ]     //it will read Mark and \n means enter 
+//it will also stop reading when reaching '\n', the enter symbol 
+
+//then next is the nextInt in line 51
+             Scanner
+nextInt() [  19\n       ] //it will read until 19 and the enter 
+
+//when we submit it using enter it creates another \n and leaves it behind in the scanner box
+
+//the String food = scanner.nextInt will have \n ALREADY stored
+             Scanner
+nextLine() [   \n      ] 
+//when we hit enter it will submit nothing and \n means to create a new line command
+
+---------------------------------------------------------------------------------------
+one easy fix is to clear the scanner by: 
+//adding the console.nextLine(); the line 112 right 
+//below line 111 being int age = console.nextInt();
+//that is one way of clearing the scanner of previous lines.
+
+import java.util.Scanner;
+public class Main{
+
+public static void main(String[] args) {
+
+Scanner console = new Scanner(System.in); 
+
+System.out.println("What is your name? ");
+String name = console.nextLine();
+System.out.println("How old are you? ");
+int age = console.nextInt();
+console.nextLine(); //clear out the previous line 
+System.out.println("What is your favorite food? ");
+String food = console.nextLine();
+
+System.out.println("Hello " + name);
+System.out.println("You are " + age + " years old");
+System.out.println("You like " + food);
+
+}
+}
+
+results:
+What is your name? 
+Mark
+How old are you? 
+19
+What is your favorite food? 
+//here we can input "pizaa" as an example and it will not skip the command
+
+full results:
+What is your name? 
+Mark
+How old are you? 
+19
+What is your favorite food? 
+pizza
+Hello Mark
+You are 19 years old
+You like pizza
+
+=== Code Execution Successful ===
+
