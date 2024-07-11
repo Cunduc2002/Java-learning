@@ -1,0 +1,42 @@
+//array only store referenced data type 
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList <String> food = new ArrayList<String>();
+        //<> is called wrapper class and only use Integer or String inside <>
+        
+        food.add("pizza");
+        food.add("Hamburger");
+        food.add("hotdog");
+        
+        for (int i =0; i< food.size(); i++) {
+            System.out.println(food.get(i));
+        }
+    }
+}
+***********************************************************
+//array only store referenced data type 
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList <String> food = new ArrayList<String>();
+        //<> is called wrapper class and only use Integer or String inside <>
+        
+        food.add("pizza");
+        food.add("Hamburger");
+        food.add("hotdog");
+        
+        food.set(0, "sushi"); //replace pizza with sushi
+        food.remove(2); //remove element 2
+        //food.clear //to clear everything
+        
+        for (int i =0; i< food.size(); i++) {
+            System.out.println(food.get(i));
+        }
+    }
+}
+  
