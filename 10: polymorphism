@@ -1,0 +1,149 @@
+//polymorphism = greek word for poly-"many", morph-"form"
+//               The ability of an object to identify as more than one type
+
+
+public class Bicycle extends Vehicle {
+    
+}
+--------------------------------------
+public class Vehicle {
+    
+}
+--------------------------------------------
+public class Car extends Vehicle {
+    
+}
+--------------------------------------------
+//we will attempt to store car, bicycle, boat in racers array.
+//example start from line 30
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bicycle bicyle = new Bicycle();
+        Boat boat = new Boat();
+        
+        racers = {car, bicycle,boat};
+        
+    }
+}
+//*************************************************
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bicycle bicyle = new Bicycle();
+        Boat boat = new Boat();
+        
+       Car[] racers = {car, bicycle,boat};
+       //if Car[] then we can only store car, but not bicycle or boat
+       //if use Boat[] then we can only store boat and not others
+        
+        
+    }
+}
+//********************************************
+//to solve this issue we use polymorhism
+//we extends Bicycle, car, boat class with vehicle to make them identify as Vehicle 
+---------------------------------
+public class Bicycle extends Vehicle {
+    
+}
+-----------------------------------
+public class Vehicle {
+    
+}
+-------------------------------------
+public class Car extends Vehicle {
+    
+}
+--------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bicycle bicyle = new Bicycle();
+        Boat boat = new Boat();
+        
+        Vehicle[] racers = {car,bicycle,boat}; 
+        //since all classes are identified as vehicle so we can use that 
+
+    }
+}
+//**********************
+public class Vehicle {
+    
+}
+
+public class Bicycle extends Vehicle {
+    public void go() {
+        System.out.println("The bicycle begins moving");
+    }
+}
+
+public class Boat extends Vehicle {
+    public void go() {
+        System.out.println("The boat begins moving");
+    }
+}
+
+public class Car extends Vehicle {
+    public void go() {
+        System.out.println("The car begins moving");
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bicycle bicyle = new Bicycle();
+        Boat boat = new Boat();
+        
+        Vehicle[] racers = {car,bicycle,boat};
+        car.go();
+        bicycle.go();
+        boat.go();
+        
+    }
+}
+//Output: The car begins moving
+//        The bicycle begins moving
+//        The boat begins moving
+
+//******************************
+//another way in "main" class is to use for loop
+public class Vehicle {
+    
+}
+
+public class Bicycle extends Vehicle {
+    @Override
+    public void go() {
+        System.out.println("The bicycle begins moving");
+    }
+}
+
+public class Boat extends Vehicle {
+    @Override
+    public void go() {
+        System.out.println("The boat begins moving");
+    }
+}
+
+public class Car extends Vehicle {
+    @Override
+    public void go() {
+        System.out.println("The car begins moving");
+}
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bicycle bicyle = new Bicycle();
+        Boat boat = new Boat();
+        
+        Vehicle[] racers = {car,bicycle,boat};
+        
+        for (Vehicle x: racers) { x.go(); }
+    }
+}
+//Output: The car begins moving
+//        The bicycle begins moving
+//        The boat begins moving
+//**********************************
+
