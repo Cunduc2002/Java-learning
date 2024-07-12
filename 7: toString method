@@ -1,0 +1,53 @@
+//two classes 
+//First one is car:
+public class Car  {
+    String make = "Ford";
+    String model = "Mustang";
+    String color = "red";
+    int year = 2021;
+}
+//***************************************
+//second class:
+public class Main {
+    public static void main(String[] args) {
+        
+        Car car = new Car();
+        
+        System.out.println(car.make);
+        System.out.println(car.model);
+        System.out.println(car.color);
+        System.out.println(car.year);
+        
+    }
+}
+//Output: 
+//Ford
+//Mustang
+//red
+//2021
+
+/***************************************
+//what if I change line 16 to 19 like this:
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Car car = new Car();
+        
+        System.out.println(car); 
+        //The result would be smth like Car@36baf which is the address       
+    }
+}
+/******************************
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Car car = new Car();
+        
+        System.out.println(car.toString()); 
+        //This is to return the address and its related to method overridding 
+              
+    }
+}
+
