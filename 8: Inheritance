@@ -72,7 +72,7 @@ public class Main {
 /***************************************************
 
 //benefit 1 is that we do not have to repeat everything
-//benefit 2 is that we can change car and bicycle to have different aspects
+//benefit 2 is that we can change car and bicycle to have different aspects example below: 
 
 public class Bicycle extends Vehicle{
     int wheels = 2;
@@ -103,3 +103,6 @@ public class Main {
 
 //If we use car.pedals then it won't be recognised because it's only unique to bicycle class
 //While bike doesn't have doors 
+
+//conclusion:
+//    inheritance is used when there are common aspects that both car class and bike class shares 
