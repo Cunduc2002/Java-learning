@@ -1,0 +1,157 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        //Step 1 is to surround the entire dangerous codes with try
+        try {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.println("Enter a whole number to divide: ");
+            int x = scanner.nextInt();
+            
+            System.out.println("Enter a whole number to divide by: ");
+            int y = scanner.nextInt();
+            
+            int z = x/y;
+            
+            System.out.println("Result "+ z);
+        }//call the ArithmeticException from the error and call it as 'e'
+        catch(ArithmeticException e) { 
+            System.out.println("You can't divide by zero!");
+        }
+        
+    }
+}
+//Output: 
+java -cp /tmp/9hGEFzYhDZ/Main
+Enter a whole number to divide: 
+r
+ERROR!
+Exception in thread "main" java.util.InputMismatchException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:939)
+	at java.base/java.util.Scanner.next(Scanner.java:1594)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+	at Main.main(Main.java:10)
+
+=== Code Exited With Errors ===
+//***************************************************************
+//We add another catch under line 20
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        //Step 1 is to surround the entire dangerous codes with try
+        try {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.println("Enter a whole number to divide: ");
+            int x = scanner.nextInt();
+            
+            System.out.println("Enter a whole number to divide by: ");
+            int y = scanner.nextInt();
+            
+            int z = x/y;
+            
+            System.out.println("Result "+ z);
+        }//call the ArithmeticException from the error and call it as 'e'
+        catch(ArithmeticException e) { 
+            System.out.println("You can't divide by zero!");
+        }
+        catch (InputMismatchExceptione) {
+            System.out.println("Please enter a number");
+        }
+        
+    }
+}
+//************************************************************
+//another catch is the last resort, but it is better to be specific 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        //Step 1 is to surround the entire dangerous codes with try
+        try {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.println("Enter a whole number to divide: ");
+            int x = scanner.nextInt();
+            
+            System.out.println("Enter a whole number to divide by: ");
+            int y = scanner.nextInt();
+            
+            int z = x/y;
+            
+            System.out.println("Result "+ z);
+        }//call the ArithmeticException from the error and call it as 'e'
+        catch(ArithmeticException e) { 
+            System.out.println("You can't divide by zero!");
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Please enter a number");
+        }
+        catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
+        finally {
+            System.out.println("This will always print");
+        }
+    }
+}
+//Output:
+java -cp /tmp/gtIEuSWMRH/Main
+Enter a whole number to divide: 
+5
+Enter a whole number to divide by: 
+1
+Result 5
+This will always print
+
+=== Code Execution Successful ===
+//**************************************
+//ANother output
+Enter a whole number to divide: 
+5
+Enter a whole number to divide by: 
+pizza
+Please enter a number
+This will always print
+
+=== Code Execution Successful ===
+//****************************************
+//finally block is a good way to close any file or scanner that might be open
+//remember to put Scanner scanner = new Scanner(System.in); outside of try 
+//                                      or the finally block won't read it
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.println("Enter a whole number to divide: ");
+            int x = scanner.nextInt();
+            
+            System.out.println("Enter a whole number to divide by: ");
+            int y = scanner.nextInt();
+            
+            int z = x/y;
+            
+            System.out.println("Result "+ z);
+        }//call the ArithmeticException from the error and call it as 'e'
+        catch(ArithmeticException e) { 
+            System.out.println("You can't divide by zero!");
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Please enter a number");
+        }
+        catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
+        finally {
+            scanner.close();
+        }
+    }
+}
