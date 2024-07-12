@@ -1,6 +1,17 @@
 //for each loop = less steps, more readable 
 //less flexible 
+public class Main {
+    public static void main(String[] args) {
+        String[] animals = {"cat", "dog", "rat", "bird"};
+        
+        for(String i : animals) {
+            System.out.println(i);//display all elements
+        }
+    }
+}
+  
 
+//******************************************************************************
 import java.util.ArrayList; //if use ArrayList then always need to import
 public class Main {
     public static void main(String[] args) {
