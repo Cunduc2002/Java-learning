@@ -105,4 +105,4 @@ public class Main {
 //While bike doesn't have doors 
 
 //conclusion:
-//    inheritance is used when there are common aspects that both car class and bike class shares 
+//    inheritance is used when there are common aspects that both car class and bike class have. 
